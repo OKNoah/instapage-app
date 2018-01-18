@@ -1,8 +1,15 @@
 import express from 'express'
 import proxy from 'instapage-proxy'
+import bodyParser from 'body-parser'
+import * as pages from './src/landing-page'
+import login from './src/auth'
 
 const app = express()
 
+app.use(bodyParser.json())
+
+app.get('/landing-page', login, pages.get)
+app.post('/landing-page', login, pages.post)
 app.get('/pages/:page', proxy)
 
 /*

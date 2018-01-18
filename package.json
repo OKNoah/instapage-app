@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node -r @babel/register -r dotenv/config ./index.js",
     "dev": "nodemon -r @babel/register -r dotenv/config ./index.js",
-    "test": "./node_modules/.bin/tape -r @babel/register -r dotenv/config ./src/*.test.js"
+    "test": "./node_modules/.bin/tape -r @babel/register -r dotenv/config ./src/*.test.js",
+    "test:watch": "./node_modules/.bin/nodemon --exec './node_modules/.bin/tape -r @babel/register -r dotenv/config ./src/*.test.js'"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.37",
@@ -20,8 +21,11 @@
   },
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cookie": "^0.3.1",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
-    "instapage-proxy": "^1.0.9"
+    "got": "^8.0.1",
+    "instapage-proxy": "^1.0.9",
+    "slug": "^0.9.1"
   }
 }
